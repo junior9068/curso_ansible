@@ -15,3 +15,9 @@ Curso de Ansible realizado na Udemy - Professor Phillipe Costa
   * Configurações de rede
   * Criação de clones
   
+O que é Ansible?
+
+Ansible é uma ferramenta Open Source que possibilita a comunicação e intereção com diversos destinos ao mesmo tempo. Foi desenvolvido por Michael DeHann (Red Hat)
+
+Principais vertentes: Gerenciamento de Mudança,  provisionamento, automação e orquestração
+
