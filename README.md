@@ -21,3 +21,10 @@ Ansible é uma ferramenta Open Source que possibilita a comunicação e intereç
 
 Principais vertentes: Gerenciamento de Mudança,  provisionamento, automação e orquestração
 
+O principal arquivo de configuração do ansible é o ansble.cfg. Sua localização padrão é: /etc/ansible/ansible.cfg.As alterações e configurações são interpretadas na seguinte ordem:
+
+  * Variável de ambiente ANSIBLE_CONFIG
+  * ansbeble.cfg no diretório corrente
+  * .ansible.cfg no diretório home
+  * /etc/ansible/ansible.cfg
+ 
