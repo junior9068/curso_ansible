@@ -28,4 +28,9 @@ O principal arquivo de configuração do ansible é o ansble.cfg. Sua localizaç
   * .ansible.cfg no diretório home
   * /etc/ansible/ansible.cfg
  
- No arquivo ansible.cfg estão as configurações mais enxutas que foram usadas no cruso
+ No arquivo ansible.cfg estão as configurações mais enxutas que foram usadas no curso
+ 
+ ## Arquivo hosts
+ 
+ É o arquivo de inventário que contem todos os hosts que serão alvos das modificações do do ansible
+
