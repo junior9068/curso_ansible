@@ -78,6 +78,25 @@ servidores - Nome do subgrupo algo que está dentro do arquivo hosts
 -m - Especifíca o módulo que será utilizado
 ping - Nome do módulo utilizado
 
+Existe também a opção de trabalhar com variáveis por GRUPO no arquivo hosts:
+
+[servidoresWeb]
+192.168.1.2
+192.168.1.3
+
+[servidoresBanco]
+192.168.1.4
+
+[servidores:children]
+servidoresWeb
+
+[servidoresWeb:vars]
+ansible_ssh_port=22
+ansible_ssh_user=root
+ansible_ssh_pass=123456
+ansible_become=yes
+ansible_become_method=sudo
+
 
 
  
