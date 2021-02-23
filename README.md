@@ -78,18 +78,9 @@ servidores - Nome do subgrupo algo que está dentro do arquivo hosts
 -m - Especifíca o módulo que será utilizado
 ping - Nome do módulo utilizado
 
-Existe também a opção de trabalhar com variáveis por GRUPO no arquivo hosts:
+Existe também a opção de trabalhar com variáveis simples e variáveis por GRUPO no arquivo hosts:
 
-[servidoresWeb]
-192.168.1.2
-192.168.1.3
-
-[servidoresBanco]
-192.168.1.4
-
-[servidores:children]
-servidoresWeb
-
+#VARIÁVEIS POR GRUPO:
 [servidoresWeb:vars]
 ansible_ssh_port=22
 ansible_ssh_user=root
@@ -98,10 +89,55 @@ ansible_become=yes
 ansible_become_method=sudo
 
 
+#VARIÁVEIS SIMPLES:
+[servidoresWeb]
+apache1 ansible_ssh_host=192.168.1.2
+apache2 ansible_ssh_host=192.168.1.3
+ 
+ 
+ ## Roles -
+ 
+ É o conjunto de intens independentes destinados a provisionar uma determinada aplicação/infraestrutura.
+ Itens:
+ Variáveis;
+ Módulos;
+ Tarefas;
+ Ações;
+ É possível associar roles com prejetos.
+ 
+ IMPORTANTE: As roles possuem uma estrutura padrão de diretórios para os projetos:
+ 
+#playbooks
+site.yml
+webservers.yml
+fooservers.yml
+roles/
+    common/ #Este é o projeto
+        tasks/ #Lista de tarefas para serem executadas em uma role
+        handlers/ #eventos acionados por uma task
+        files/ #arquivos utilizados para deploy dentro de uma role
+        templates/ #Modelos para deploy dentro de uma role (permite uso de variaveis)
+        vars/ #Variáveis adicionais de uma role
+        defaults/ #Variáveis padrão de uma role. Prioridade máxima
+        meta/ #Trata dependências de uma role por outra role - Primeiro diretório a ser analizado
+        
 
+IMPORTANTE: Dentro dos diretórios tasks, handlers, vars, defaults e meta deverá existir um arquivo com o nome de main.yml para que o mesmo seja interpretado 
  
- 
- 
- 
- 
+## Variáveis -
 
+Existe uma 'Ordem de Precedência' para a interpretação de variáveis no ansbile (na documentação a lista está em ordem de predecêdencia do menor para o maior):
+
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html
+
+As variáveis são geralente utilizadas para facilitar no provisionamento dos sistemas/infraestrutura. Entretanto, o ansible permite através  do  módulo setup  obter  o  que  chamamos  de Systems Facts. Os  Systems  Facts  são  descobertos  pelo  ansible  através  do  módulo setup, trazendo informações de todo o sistema.
+
+Exemplo: ansible hostname -m setup 
+
+
+
+
+
+
+
+        
