@@ -134,7 +134,11 @@ As variáveis são geralente utilizadas para facilitar no provisionamento dos si
 
 Exemplo: ansible hostname -m setup 
 
+## Variáveis no arquivo de inventário (hosts) -
 
+apache1 ansible_ssh_host=192.168.1.2
+apache2 ansible_ssh_host=192.168.1.3
+ 
 
 
 
