@@ -103,7 +103,7 @@ apache2 ansible_ssh_host=192.168.1.3
  Módulos;
  Tarefas;
  Ações;
- É possível associar roles com prejetos.
+ É possível associar roles com projetos.
  
  IMPORTANTE: As roles possuem uma estrutura padrão de diretórios para os projetos:
  
@@ -139,8 +139,9 @@ Exemplo: ansible hostname -m setup
 apache1 ansible_ssh_host=192.168.1.2
 apache2 ansible_ssh_host=192.168.1.3
  
+## tasks -
 
-
+Tarefas responsáveis por executar ações em uma determinada role.
 
 
 
