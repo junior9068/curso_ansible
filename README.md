@@ -139,12 +139,24 @@ Exemplo: ansible hostname -m setup
 apache1 ansible_ssh_host=192.168.1.2
 apache2 ansible_ssh_host=192.168.1.3
  
-## tasks -
+## Tasks -
 
 Tarefas responsáveis por executar ações em uma determinada role. Lembrando que dentro do diretório /tasks de ter um arquivo chamado main.yml onde estarão efetivamente nossas tarefas.
 Exemplo de uma task para instalar o pacote vim utilizando o módulo apt:
 
 ![image](https://user-images.githubusercontent.com/50958562/109834450-f3710480-7c20-11eb-97e1-49c8e5afe9cb.png)
+
+
+## Templates -
+
+Template é um aquivo que funciona de maneira dinâmica com variáveis. Um bom exemplo é a construção do arquivo motd para nos mostrar algumas informações do host após o login:
+
+![image](https://user-images.githubusercontent.com/50958562/109835736-413a3c80-7c22-11eb-9025-cdf49a91f4c4.png)
+
+Este arquivo foi criado no diretório /templates com o nome de "motd". Na task foi utilizado o módulo "template" para injetar este arquivo no diretório /etc/motd no host de destino. As variáveis autilizadas são do próprio ansible. Veja como ficou o arquivo tasks que faz a magia acontecer:
+
+![image](https://user-images.githubusercontent.com/50958562/109836399-dfc69d80-7c22-11eb-979e-e9ebaef00504.png)
+
 
 
 
