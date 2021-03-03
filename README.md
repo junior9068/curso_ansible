@@ -141,7 +141,10 @@ apache2 ansible_ssh_host=192.168.1.3
  
 ## tasks -
 
-Tarefas responsáveis por executar ações em uma determinada role.
+Tarefas responsáveis por executar ações em uma determinada role. Lembrando que dentro do diretório /tasks de ter um arquivo chamado main.yml onde estarão efetivamente nossas tarefas.
+Exemplo de uma task para instalar o pacote vim utilizando o módulo apt:
+
+![image](https://user-images.githubusercontent.com/50958562/109834320-d0465500-7c20-11eb-817d-d8f8e68028a9.png)
 
 
 
